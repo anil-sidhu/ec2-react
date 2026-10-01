@@ -34,7 +34,7 @@ jobs:
       - name: Copy build to EC2
         run: |
           ssh -i ~/.ssh/ec2.pem "ec2-user@$EC2_HOST" \
-            'mkdir -p /home/ec2-user/ec2-webapp/dist'
+            'mkdir -p /home/ec2-user/ec2-react/dist'
 
           scp -i ~/.ssh/ec2.pem -r dist/. \
-            "ec2-user@$EC2_HOST:/home/ec2-user/ec2-webapp/dist/"
+            "ec2-user@$EC2_HOST:/home/ec2-user/ec2-react/dist/"
